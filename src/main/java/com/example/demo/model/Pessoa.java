@@ -18,7 +18,7 @@ import jakarta.persistence.Table;
 public class Pessoa {
 	
 	//os atributos serão colunas no banco de dados
-	@Id
+	@Id // fala que é uma chave primária
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pessoa_id")
 	private Integer id;
