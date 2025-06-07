@@ -22,12 +22,17 @@ public class Disciplina {
 	
 	private Integer carga_horaria;
 
+    public Disciplina() {
+    	
+    }
+    
 	public Disciplina(Integer id, String nome, Integer carga_horaria) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.carga_horaria = carga_horaria;
 	}
+
 
 	public Integer getId() {
 		return id;
