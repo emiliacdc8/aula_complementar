@@ -35,6 +35,10 @@ public class AulaOrmApplication implements CommandLineRunner{
 		Aluno a4 = new Aluno(null, "Marcos Andrade", "marcosandrade@gmail.com", "1012", "CDC");
 		Aluno a5 = new Aluno(null, "Gustavo Oliveira", "gustavooliveira@gmail.com", "1234", "CDC");
 		
+		d1.getAlunos().addAll(Arrays.asList(a1,a2,a3));
+		d2.getAlunos().addAll(Arrays.asList(a2,a4));
+		d3.getAlunos().addAll(Arrays.asList(a1,a3,a5));
+		
 		alunoRepository.saveAll(Arrays.asList(a1,a2,a3,a4,a5));
 		disciplinaRepository.saveAll(Arrays.asList(d1,d2,d3));
 	}

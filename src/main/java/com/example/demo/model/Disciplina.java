@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -7,6 +9,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity 
@@ -22,6 +27,14 @@ public class Disciplina {
 	
 	private Integer carga_horaria;
 
+	//Junção de tabelas entre disciplina e alunos
+	@ManyToMany
+	@JoinTable(name="DISCIPLINAS_ALUNOS",
+			joinColumns = @JoinColumn(name = "disciplina_id"),
+			inverseJoinColumns = @JoinColumn(name = "aluno_id"))
+
+	private List<Aluno> alunos = new ArrayList<>();
+	
     public Disciplina() {
     	
     }
@@ -56,6 +69,14 @@ public class Disciplina {
 
 	public void setCarga_horaria(Integer carga_horaria) {
 		this.carga_horaria = carga_horaria;
+	}
+
+	public List<Aluno> getAlunos() {
+		return alunos;
+	}
+
+	public void setAlunos(List<Aluno> alunos) {
+		this.alunos = alunos;
 	}
 
 	@Override
