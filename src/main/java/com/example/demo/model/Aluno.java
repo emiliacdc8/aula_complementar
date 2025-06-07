@@ -12,8 +12,13 @@ public class Aluno extends Pessoa{
 	@Column(nullable = false)
 	private String curso;
 	
+    // Construtor padrão obrigatório para JPA
+    public Aluno() {
+    	
+    }
+
 	public Aluno(Integer id, String nome, String email, String matricula, String curso) {
-		super(id, curso, curso);
+		super(id, nome, email);
 		this.matricula = matricula;
 		this.curso = curso;
 	}

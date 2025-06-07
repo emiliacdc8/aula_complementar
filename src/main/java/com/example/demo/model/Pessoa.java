@@ -27,7 +27,9 @@ public class Pessoa {
 	@Column(name = "email_pessoa", nullable = false)//não quero que essa coluna seja vazia
 	private String email;
 	
-
+	public Pessoa() {
+		
+	}
 	public Pessoa(Integer id, String nome, String email) {
 		super();
 		this.id = id;
